@@ -24,8 +24,8 @@
                 app:cardCornerRadius="50dp">
                 <ImageButton
                     android:id="@+id/ibtnClose"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:scaleType="centerCrop"
                     android:background="@color/white"
                     android:src="@drawable/ic_close"/>

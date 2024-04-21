@@ -43,7 +43,7 @@
             android:textColor="@color/white"
             android:textSize="30sp"
             android:textStyle="bold"
-            android:text="Ertalabki nonushta"/>
+            android:text="Kechki ovqat"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
