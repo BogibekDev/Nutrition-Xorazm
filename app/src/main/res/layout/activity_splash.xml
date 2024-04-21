@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.SplashActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/app_name"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img1" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:src="@drawable/logo"
+        android:contentDescription="@string/app_name"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:layout_height="300dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:background="@color/white"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/bStart"
+            android:layout_width="match_parent"
+            android:text="@string/start"
+            android:visibility="gone"
+            android:layout_marginHorizontal="30dp"
+            android:textSize="30sp"
+            android:backgroundTint="#69B650"
+            android:layout_height="80dp"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

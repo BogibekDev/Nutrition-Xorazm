@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Nutrition Xorazm</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="breakfast">Ertalabki nonushta</string>
+    <string name="lunch">Tushlik</string>
+    <string name="dinner">Kechki ovqat</string>
+    <string name="start">Boshlash</string>
+</resources>
