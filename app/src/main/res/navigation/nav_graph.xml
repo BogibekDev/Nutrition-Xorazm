@@ -9,7 +9,17 @@
         android:id="@+id/homeFragment"
         android:name="dev.bogibek.nutritionxorazm.ui.fragment.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_breakfastFragment"
+            app:destination="@id/breakfastFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_lunchFragment"
+            app:destination="@id/lunchFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_dinnerFragment"
+            app:destination="@id/dinnerFragment" />
+    </fragment>
     <fragment
         android:id="@+id/adviceFragment"
         android:name="dev.bogibek.nutritionxorazm.ui.fragment.AdviceFragment"
@@ -30,4 +40,19 @@
         android:name="dev.bogibek.nutritionxorazm.ui.fragment.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/breakfastFragment"
+        android:name="dev.bogibek.nutritionxorazm.ui.fragment.BreakfastFragment"
+        android:label="fragment_breakfast"
+        tools:layout="@layout/fragment_breakfast" />
+    <fragment
+        android:id="@+id/lunchFragment"
+        android:name="dev.bogibek.nutritionxorazm.ui.fragment.LunchFragment"
+        android:label="fragment_lunch"
+        tools:layout="@layout/fragment_lunch" />
+    <fragment
+        android:id="@+id/dinnerFragment"
+        android:name="dev.bogibek.nutritionxorazm.ui.fragment.DinnerFragment"
+        android:label="fragment_dinner"
+        tools:layout="@layout/fragment_dinner" />
 </navigation>

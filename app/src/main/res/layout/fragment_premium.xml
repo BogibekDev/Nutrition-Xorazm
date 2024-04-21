@@ -1,14 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#16120E0E"
+    android:orientation="vertical"
     tools:context=".ui.fragment.PremiumFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="premium" />
-
-</FrameLayout>
+        android:layout_weight="1.3"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingEnd="16dp"
+            android:gravity="end|center_vertical">
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="50dp">
+                <ImageButton
+                    android:id="@+id/ibtnClose"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:scaleType="centerCrop"
+                    android:background="@color/white"
+                    android:src="@drawable/ic_close"/>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingHorizontal="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/pic_premium"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="PREMIUM"
+                android:textColor="@color/black"
+                android:textSize="36dp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:paddingBottom="16dp"
+        android:gravity="bottom|center">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom|center"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:text="@string/_7_kun_bepul_sinab_ko_ring_nsinov_muddati_tugagandan_keyin_noylik_va_yillik_xizmatlardan_foydalaning"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:paddingTop="16dp"
+        android:paddingHorizontal="16dp"
+        android:orientation="vertical"
+        android:gravity="top">
+        <Button
+            android:id="@+id/btnFree"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@drawable/btn_gender_bg"
+            android:layout_marginVertical="5dp"
+            app:backgroundTint="#08A6B0"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="Bepul sinov muddatini boshlang"/>
+        <Button
+            android:id="@+id/btnMonth"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@drawable/btn_gender_bg"
+            android:layout_marginVertical="5dp"
+            app:backgroundTint="#08A6B0"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="OYLIK TO’LOV - 4,5 US$oylik"/>
+        <Button
+            android:id="@+id/btnYear"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@drawable/btn_gender_bg"
+            android:layout_marginVertical="5dp"
+            app:backgroundTint="#FF7B01"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="YILLIK TO’LOV - 20,5 US$yillik"/>
+    </LinearLayout>
+</LinearLayout>

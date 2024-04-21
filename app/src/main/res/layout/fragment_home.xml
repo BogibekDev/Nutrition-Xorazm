@@ -41,6 +41,7 @@
                android:gravity="center"
                android:layout_height="wrap_content">
                <ImageView
+                   android:id="@+id/ivBreakfast"
                    android:layout_width="match_parent"
                    android:layout_height="120dp"
                    android:adjustViewBounds="true"
@@ -48,6 +49,7 @@
                    android:scaleType="centerCrop"
                    android:src="@drawable/img_top"/>
                <TextView
+                   android:id="@+id/tvBreakfast"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:text="@string/breakfast"
@@ -64,6 +66,7 @@
                android:gravity="center"
                android:layout_height="wrap_content">
                <ImageView
+                   android:id="@+id/ivLunch"
                    android:layout_width="match_parent"
                    android:layout_height="120dp"
                    android:adjustViewBounds="true"
@@ -71,6 +74,7 @@
                    android:scaleType="centerCrop"
                    android:src="@drawable/img_top"/>
                <TextView
+                   android:id="@+id/tvLunch"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:text="@string/lunch"
@@ -87,6 +91,7 @@
                android:gravity="center"
                android:layout_height="wrap_content">
                <ImageView
+                   android:id="@+id/ivDinner"
                    android:layout_width="match_parent"
                    android:layout_height="120dp"
                    android:adjustViewBounds="true"
@@ -94,6 +99,7 @@
                    android:scaleType="centerCrop"
                    android:src="@drawable/img_top"/>
                <TextView
+                   android:id="@+id/tvDinner"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:text="@string/dinner"
