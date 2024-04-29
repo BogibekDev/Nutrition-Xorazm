@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_height="match_parent"
     android:background="#32532F"
@@ -14,24 +15,11 @@
            android:layout_width="match_parent"
            android:layout_height="match_parent"
            android:orientation="vertical">
-           <FrameLayout
+           <ImageView
                android:layout_width="match_parent"
-               android:layout_height="190dp">
-               <ImageView
-                   android:layout_width="match_parent"
-                   android:src="@drawable/img_top"
-                   android:contentDescription="@string/app_name"
-                   android:adjustViewBounds="true"
-                   android:scaleType="centerCrop"
-                   android:layout_height="150dp"/>
-
-               <ImageView
-                   android:contentDescription="@string/app_name"
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content"
-                   android:layout_gravity="bottom"
-                   android:src="@drawable/img_shape"/>
-           </FrameLayout>
+               android:layout_height="match_parent"
+               android:src="@drawable/img_top"
+               android:layout_marginBottom="16dp"/>
 
            <LinearLayout
                android:id="@+id/llBreakfast"
@@ -39,23 +27,34 @@
                android:orientation="vertical"
                android:paddingHorizontal="16dp"
                android:gravity="center"
+               android:padding="16dp"
                android:layout_height="wrap_content">
-               <ImageView
-                   android:id="@+id/ivBreakfast"
+               <androidx.cardview.widget.CardView
                    android:layout_width="match_parent"
-                   android:layout_height="120dp"
-                   android:adjustViewBounds="true"
-                   android:contentDescription="@string/app_name"
-                   android:scaleType="centerCrop"
-                   android:src="@drawable/img_top"/>
-               <TextView
-                   android:id="@+id/tvBreakfast"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:text="@string/breakfast"
-                   android:textColor="@color/white"
-                   android:textSize="32sp"
-                   android:textStyle="bold"/>
+                   android:layout_height="match_parent"
+                   app:cardCornerRadius="20dp">
+                   <FrameLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent">
+                       <ImageView
+                           android:id="@+id/ivBreakfast"
+                           android:layout_width="match_parent"
+                           android:layout_height="120dp"
+                           android:adjustViewBounds="true"
+                           android:contentDescription="@string/app_name"
+                           android:scaleType="centerCrop"
+                           android:src="@drawable/pic_breakfast"/>
+                       <TextView
+                           android:id="@+id/tvBreakfast"
+                           android:layout_width="match_parent"
+                           android:layout_height="match_parent"
+                           android:text="@string/breakfast"
+                           android:textColor="@color/white"
+                           android:textSize="32sp"
+                           android:gravity="center"
+                           android:textStyle="bold"/>
+                   </FrameLayout>
+               </androidx.cardview.widget.CardView>
 
            </LinearLayout>
            <LinearLayout
@@ -64,23 +63,35 @@
                android:orientation="vertical"
                android:paddingHorizontal="16dp"
                android:gravity="center"
+               android:padding="16dp"
+
                android:layout_height="wrap_content">
-               <ImageView
-                   android:id="@+id/ivLunch"
+               <androidx.cardview.widget.CardView
                    android:layout_width="match_parent"
-                   android:layout_height="120dp"
-                   android:adjustViewBounds="true"
-                   android:contentDescription="@string/app_name"
-                   android:scaleType="centerCrop"
-                   android:src="@drawable/img_top"/>
-               <TextView
-                   android:id="@+id/tvLunch"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:text="@string/lunch"
-                   android:textColor="@color/white"
-                   android:textSize="32sp"
-                   android:textStyle="bold"/>
+                   android:layout_height="match_parent"
+                   app:cardCornerRadius="20dp">
+                   <FrameLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent">
+                       <ImageView
+                           android:id="@+id/ivLunch"
+                           android:layout_width="match_parent"
+                           android:layout_height="120dp"
+                           android:adjustViewBounds="true"
+                           android:contentDescription="@string/app_name"
+                           android:scaleType="centerCrop"
+                           android:src="@drawable/pic_lunch"/>
+                       <TextView
+                           android:id="@+id/tvLunch"
+                           android:layout_width="match_parent"
+                           android:layout_height="match_parent"
+                           android:text="@string/breakfast"
+                           android:textColor="@color/white"
+                           android:textSize="32sp"
+                           android:gravity="center"
+                           android:textStyle="bold"/>
+                   </FrameLayout>
+               </androidx.cardview.widget.CardView>
 
            </LinearLayout>
            <LinearLayout
@@ -89,23 +100,34 @@
                android:orientation="vertical"
                android:paddingHorizontal="16dp"
                android:gravity="center"
+               android:padding="16dp"
                android:layout_height="wrap_content">
-               <ImageView
-                   android:id="@+id/ivDinner"
+               <androidx.cardview.widget.CardView
                    android:layout_width="match_parent"
-                   android:layout_height="120dp"
-                   android:adjustViewBounds="true"
-                   android:contentDescription="@string/app_name"
-                   android:scaleType="centerCrop"
-                   android:src="@drawable/img_top"/>
-               <TextView
-                   android:id="@+id/tvDinner"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:text="@string/dinner"
-                   android:textColor="@color/white"
-                   android:textSize="32sp"
-                   android:textStyle="bold"/>
+                   android:layout_height="match_parent"
+                   app:cardCornerRadius="20dp">
+                   <FrameLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent">
+                       <ImageView
+                           android:id="@+id/ivDinner"
+                           android:layout_width="match_parent"
+                           android:layout_height="120dp"
+                           android:adjustViewBounds="true"
+                           android:contentDescription="@string/app_name"
+                           android:scaleType="centerCrop"
+                           android:src="@drawable/pic_dinner"/>
+                       <TextView
+                           android:id="@+id/tvDinner"
+                           android:layout_width="match_parent"
+                           android:layout_height="match_parent"
+                           android:text="@string/breakfast"
+                           android:textColor="@color/white"
+                           android:textSize="32sp"
+                           android:gravity="center"
+                           android:textStyle="bold"/>
+                   </FrameLayout>
+               </androidx.cardview.widget.CardView>
 
            </LinearLayout>
        </LinearLayout>

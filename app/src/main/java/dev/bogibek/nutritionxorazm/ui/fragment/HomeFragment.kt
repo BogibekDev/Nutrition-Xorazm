@@ -31,12 +31,6 @@ class HomeFragment : Fragment() {
             ivBreakfast.setOnClickListener {
                 findNavController().navigate(R.id.action_homeFragment_to_breakfastFragment)
             }
-            ivLunch.setOnClickListener {
-                findNavController().navigate(R.id.action_homeFragment_to_lunchFragment)
-            }
-            ivDinner.setOnClickListener {
-                findNavController().navigate(R.id.action_homeFragment_to_dinnerFragment)
-            }
         }
     }
 }

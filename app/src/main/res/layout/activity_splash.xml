@@ -13,7 +13,7 @@
         android:adjustViewBounds="true"
         android:contentDescription="@string/app_name"
         android:scaleType="centerCrop"
-        android:src="@drawable/img1" />
+        android:src="@drawable/pic_foods_head" />
 
     <ImageView
         android:layout_width="match_parent"

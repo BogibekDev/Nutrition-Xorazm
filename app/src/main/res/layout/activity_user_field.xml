@@ -69,89 +69,106 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:orientation="horizontal"
-            android:gravity="bottom">
-            <TextView
-                android:id="@+id/tvAge"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:text="Yosh"
-                android:textSize="30sp"
-                android:textColor="#69B650"/>
-            <EditText
-                android:id="@+id/btnAge"
-                android:layout_width="match_parent"
-                android:layout_height="65dp"
-                android:gravity="center"
-                android:layout_marginEnd="16dp"
-                android:layout_weight="1"
-                android:layout_marginStart="16dp"
-                android:textStyle="bold"
-                android:background="@drawable/btn_gender_bg"
-                android:textSize="30sp"
-                android:textColor="#69B650" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="bottom"
+            android:gravity="center"
             android:orientation="horizontal">
-            <TextView
-                android:id="@+id/tvWeight"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:text="Vazn"
-                android:textSize="30sp"
-                android:textColor="#69B650"/>
-            <EditText
-                android:id="@+id/btnWeight"
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="370dp"
                 android:layout_height="65dp"
-                android:layout_marginEnd="16dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:layout_marginStart="16dp"
-                app:backgroundTint="@null"
-                android:textStyle="bold"
-                android:background="@drawable/btn_gender_bg"
-                android:textSize="30sp"
-                android:textColor="#69B650"/>
+                android:layout_gravity="bottom"
+                android:gravity="bottom"
+                android:background="@drawable/content_background">
+                <TextView
+                    android:id="@+id/tvAge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="Yosh"
+                    android:textSize="30sp"
+                    android:textColor="#69B650"/>
+                <EditText
+                    android:id="@+id/etAge"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_marginStart="16dp"
+                    android:textStyle="bold"
+                    android:background="@drawable/btn_gender_bg"
+                    android:textSize="30sp"
+                    android:textColor="#69B650" />
+            </LinearLayout>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="bottom">
-            <TextView
-                android:id="@+id/tvHeight"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:text="Bo\'y"
-                android:textSize="30sp"
-                android:textColor="#69B650"/>
-            <EditText
-                android:id="@+id/btnHeight"
-                android:layout_width="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="370dp"
                 android:layout_height="65dp"
-                android:layout_marginEnd="16dp"
-                android:layout_weight="1"
-                android:layout_marginStart="16dp"
-                app:backgroundTint="@null"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:background="@drawable/btn_gender_bg"
-                android:textSize="30sp"
-                android:textColor="#69B650"/>
+                android:layout_gravity="bottom"
+                android:gravity="bottom"
+                android:background="@drawable/content_background">
+                <TextView
+                    android:id="@+id/tvWeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="Vazn"
+                    android:textSize="30sp"
+                    android:textColor="#69B650"/>
+                <EditText
+                    android:id="@+id/etWeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_marginStart="16dp"
+                    android:textStyle="bold"
+                    android:background="@drawable/btn_gender_bg"
+                    android:textSize="30sp"
+                    android:textColor="#69B650" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="370dp"
+                android:layout_height="65dp"
+                android:layout_gravity="bottom"
+                android:gravity="bottom"
+                android:background="@drawable/content_background">
+                <TextView
+                    android:id="@+id/tvHeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="Bo'y"
+                    android:textSize="30sp"
+                    android:textColor="#69B650"/>
+                <EditText
+                    android:id="@+id/etHeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_marginStart="16dp"
+                    android:textStyle="bold"
+                    android:background="@drawable/btn_gender_bg"
+                    android:textSize="30sp"
+                    android:textColor="#69B650" />
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
     <LinearLayout
