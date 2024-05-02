@@ -15,6 +15,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:contentDescription="@string/app_name"
             android:src="@drawable/pic_foods_head"
             android:scaleType="centerCrop"/>
     </LinearLayout>
@@ -61,7 +62,6 @@
                 android:textColor="@color/black"
                 android:paddingStart="10dp"
                 android:maxLines="1"
-                android:drawableEnd=""
                 android:background="@drawable/et_bg"/>
         </com.google.android.material.textfield.TextInputLayout>
         <TextView

@@ -31,6 +31,16 @@ class SharedPrefs(context: Context) {
         editor.apply()
     }
 
+    fun saveUserId(value: Long) {
+        val editor = pref.edit()
+        editor.putLong("UserId", value)
+        editor.apply()
+    }
+
+    fun getUserId(): Int {
+        return pref.getInt("UserId", 0)
+    }
+
     fun getInt(key: String): Int {
         return pref.getInt(key, 0)
     }

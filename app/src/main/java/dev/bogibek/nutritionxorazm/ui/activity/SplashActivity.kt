@@ -39,7 +39,7 @@ class SplashActivity : AppCompatActivity() {
             findViewById<Button>(R.id.bStart).also {
                 it.visibility = View.VISIBLE
                 it.setOnClickListener {
-                    startActivity(Intent(this, UserFieldActivity::class.java))
+                    startActivity(Intent(this, SignInActivity::class.java))
                     finish()
                 }
             }

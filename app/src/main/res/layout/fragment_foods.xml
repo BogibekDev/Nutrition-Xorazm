@@ -16,6 +16,7 @@
             android:id="@+id/ibBack"
             android:layout_width="32dp"
             android:layout_height="32dp"
+            android:contentDescription="@string/app_name"
             android:src="@drawable/ic_back"
             app:backgroundTint="@null"
             android:layout_marginStart="16dp"
@@ -67,56 +68,13 @@
                 android:textSize="22sp"
                 android:textColor="@color/white"
                 android:textStyle="bold"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="@drawable/content_background"
-                android:orientation="horizontal">
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/ivPicOneFoods"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginVertical="10dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/pic_foods_one"
-                    app:shapeAppearanceOverlay="@style/circleCorner"/>
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/ivPicTwoFoods"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerCrop"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginVertical="10dp"
-                    android:src="@drawable/pic_foods_two"
-                    app:shapeAppearanceOverlay="@style/circleCorner"/>
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/ivPicThreeFoods"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerCrop"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginVertical="10dp"
-                    android:src="@drawable/pic_foods_three"
-                    app:shapeAppearanceOverlay="@style/circleCorner"/>
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/ivPicFourFoods"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerCrop"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginVertical="10dp"
-                    android:src="@drawable/pic_foods_four"
-                    app:shapeAppearanceOverlay="@style/circleCorner"/>
-            </LinearLayout>
+           <androidx.recyclerview.widget.RecyclerView
+               android:layout_width="match_parent"
+               android:id="@+id/rvFoods"
+               tools:listitem="@layout/item_food"
+               app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+               android:orientation="horizontal"
+               android:layout_height="wrap_content"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -131,56 +89,13 @@
                 android:textSize="22sp"
                 android:textColor="@color/white"
                 android:textStyle="bold"/>
-            <LinearLayout
+            <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="@drawable/content_background"
-                android:orientation="horizontal">
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/ivPicOneSalads"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginVertical="10dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/pic_salads_one"
-                    app:shapeAppearanceOverlay="@style/circleCorner"/>
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/ivPicTwoSalads"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerCrop"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginVertical="10dp"
-                    android:src="@drawable/pic_salads_two"
-                    app:shapeAppearanceOverlay="@style/circleCorner"/>
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/ivPicThreeSalads"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerCrop"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginVertical="10dp"
-                    android:src="@drawable/pic_salads_three"
-                    app:shapeAppearanceOverlay="@style/circleCorner"/>
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/ivPicFourSalads"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerCrop"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginVertical="10dp"
-                    android:src="@drawable/pic_salads_four"
-                    app:shapeAppearanceOverlay="@style/circleCorner"/>
-            </LinearLayout>
+                android:id="@+id/rvSalads"
+                tools:listitem="@layout/item_food"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -195,56 +110,13 @@
                 android:textSize="22sp"
                 android:textColor="@color/white"
                 android:textStyle="bold"/>
-            <LinearLayout
+            <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="@drawable/content_background"
-                android:orientation="horizontal">
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/ivPicOneSweets"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginVertical="10dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/pic_sweets_one"
-                    app:shapeAppearanceOverlay="@style/circleCorner"/>
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/ivPicTwoSweets"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerCrop"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginVertical="10dp"
-                    android:src="@drawable/pic_sweets_two"
-                    app:shapeAppearanceOverlay="@style/circleCorner"/>
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/ivPicThreeSweets"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerCrop"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginVertical="10dp"
-                    android:src="@drawable/pic_sweets_three"
-                    app:shapeAppearanceOverlay="@style/circleCorner"/>
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/ivPicFourSweets"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerCrop"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginVertical="10dp"
-                    android:src="@drawable/pic_sweets_four"
-                    app:shapeAppearanceOverlay="@style/circleCorner"/>
-            </LinearLayout>
+                android:id="@+id/rvShirinlik"
+                tools:listitem="@layout/item_food"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -259,64 +131,13 @@
                 android:textSize="22sp"
                 android:textColor="@color/white"
                 android:textStyle="bold"/>
-            <LinearLayout
+            <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="@drawable/content_background"
-                android:orientation="horizontal">
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/ivPicOneDrinks"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginVertical="10dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/pic_drinks_one"
-                    app:shapeAppearanceOverlay="@style/circleCorner"/>
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/ivPicTwoDrinks"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerCrop"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginVertical="10dp"
-                    android:src="@drawable/pic_drinks_two"
-                    app:shapeAppearanceOverlay="@style/circleCorner"/>
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/ivPicThreeDrinks"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginVertical="10dp"
-                    android:src="@drawable/pic_drinks_three"
-                    app:shapeAppearanceOverlay="@style/circleCorner"/>
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/ivPicFourDrinks"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginVertical="10dp"
-                    android:src="@drawable/pic_drinks_four"
-                    app:shapeAppearanceOverlay="@style/circleCorner"/>
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/ivPicFiveDrinks"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginVertical="10dp"
-                    android:src="@drawable/pic_drinks_five"
-                    app:shapeAppearanceOverlay="@style/circleCorner"/>
-            </LinearLayout>
+                android:id="@+id/rvIchimlik"
+                tools:listitem="@layout/item_food"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -331,67 +152,14 @@
                 android:textSize="22sp"
                 android:textColor="@color/white"
                 android:textStyle="bold"/>
-            <LinearLayout
+            <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="@drawable/content_background"
-                android:orientation="horizontal">
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/ivPicOneFruits"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginVertical="10dp"
-                    android:src="@drawable/pic_fruits_one"
-                    app:shapeAppearanceOverlay="@style/circleCorner"/>
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/ivPicTwoFruits"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginVertical="10dp"
-                    android:src="@drawable/pic_fruits_two"
-                    app:shapeAppearanceOverlay="@style/circleCorner"/>
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/ivPicThreeFruits"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginVertical="10dp"
-                    android:src="@drawable/pic_fruits_three"
-                    app:shapeAppearanceOverlay="@style/circleCorner"/>
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/ivPicFourFruits"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginVertical="10dp"
-                    android:src="@drawable/pic_fruits_four"
-                    app:shapeAppearanceOverlay="@style/circleCorner"/>
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/ivPicFiveFruits"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginVertical="10dp"
-                    android:src="@drawable/pic_fruits_five"
-                    app:shapeAppearanceOverlay="@style/circleCorner"/>
-            </LinearLayout>
+                android:id="@+id/rvFruits"
+                tools:listitem="@layout/item_food"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content"/>
         </LinearLayout>
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="3.8">
-    </LinearLayout>
+
 </LinearLayout>
