@@ -166,7 +166,7 @@
                             android:id="@+id/llNotice"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="3.5"
+                            android:layout_weight="1.5"
                             android:visibility="visible"
                             android:gravity="center|top"
                             android:orientation="vertical">
@@ -193,11 +193,50 @@
                             android:layout_weight="1"
                             android:orientation="vertical"
                             android:gravity="center|top">
-                            <androidx.recyclerview.widget.RecyclerView
-                                android:id="@+id/rvAdvice"
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                tools:listitem="@layout/item_advice_foods"/>
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/black"
+                                    android:textSize="24sp"
+                                    android:textFontWeight="700"
+                                    android:layout_weight="1"
+                                    android:layout_marginHorizontal="15dp"
+                                    android:text="Tuxum"/>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/black"
+                                    android:textSize="20sp"
+                                    android:layout_weight="1"
+                                    android:layout_marginHorizontal="15dp"
+                                    android:textStyle="bold"
+                                    android:text="320 kkal"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/black"
+                                    android:textSize="20sp"
+                                    android:layout_marginHorizontal="15dp"
+                                    android:textStyle="bold"
+                                    android:text="Tuxum"/>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/black"
+                                    android:textSize="20sp"
+                                    android:layout_marginHorizontal="15dp"
+                                    android:textStyle="bold"
+                                    android:text="320 kkal"/>
+                            </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>
                     <LinearLayout
@@ -205,55 +244,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="3"
-                        android:gravity="center|top"
                         android:orientation="vertical">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="20sp"
-                            android:textStyle="bold"
-                            android:textColor="@color/black"
-                            android:text="Bu taomlarni istemol qilish orqali"/>
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="20sp"
-                                android:textStyle="bold"
-                                android:textColor="@color/black"
-                                android:text="o’zingizga kerakli bo’lgan"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="20sp"
-                                android:layout_marginStart="7dp"
-                                android:textStyle="bold"
-                                android:textColor="#30A709"
-                                android:text="vitamin"/>
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="20sp"
-                                android:textStyle="bold"
-                                android:textColor="#30A709"
-                                android:text="va minerallarga"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="20sp"
-                                android:layout_marginStart="7dp"
-                                android:textStyle="bold"
-                                android:textColor="@color/black"
-                                android:text="ega bo’lasiz."/>
-                        </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
                 <LinearLayout

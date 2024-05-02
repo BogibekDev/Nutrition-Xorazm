@@ -1,20 +1,42 @@
 package dev.bogibek.nutritionxorazm.ui.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import dev.bogibek.nutritionxorazm.R
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import dev.bogibek.nutritionxorazm.adapters.AdviceAdapter
+import dev.bogibek.nutritionxorazm.databinding.FragmentAdviceBinding
+import dev.bogibek.nutritionxorazm.models.FoodsModel
 
 
-class AdviceFragment : Fragment(R.layout.fragment_advice) {
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        initViews(view)
+class AdviceFragment : Fragment() {
+    private lateinit var binding: FragmentAdviceBinding
+    private lateinit var foods: ArrayList<FoodsModel>
+    private lateinit var adapter: AdviceAdapter
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        binding = FragmentAdviceBinding.inflate(layoutInflater, container, false)
+        return binding.root
     }
 
-    private fun initViews(view: View) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initViews()
+    }
 
+    private fun initViews() {
+        adapter = AdviceAdapter(foods)
+        foods = ArrayList()
+        binding.apply {
+            rvAdvice?.layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+            rvAdvice?.adapter = adapter
+
+        }
     }
 }

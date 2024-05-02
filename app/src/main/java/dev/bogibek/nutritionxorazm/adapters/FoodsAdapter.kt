@@ -10,7 +10,6 @@ import dev.bogibek.nutritionxorazm.models.FoodsModel
 
 class FoodsAdapter(private val foods:ArrayList<FoodsModel>):RecyclerView.Adapter<FoodsAdapter.FoodsViewHolder>() {
     class FoodsViewHolder(view:View):RecyclerView.ViewHolder(view){
-        val date :TextView = view.findViewById(R.id.tvDate)
         val name:TextView = view.findViewById(R.id.tvFoodName)
         val calorie:TextView = view.findViewById(R.id.tvCalorie)
     }
@@ -23,11 +22,6 @@ class FoodsAdapter(private val foods:ArrayList<FoodsModel>):RecyclerView.Adapter
 
     override fun onBindViewHolder(holder: FoodsViewHolder, position: Int) {
         holder.apply {
-            if (foods[position].date == null){
-                date.visibility = View.GONE
-            }else{
-                date.text = foods[position].date
-            }
             name.text = foods[position].name
             calorie.text = foods[position].calorie
         }
