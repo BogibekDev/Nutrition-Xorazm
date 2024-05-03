@@ -1,9 +1,9 @@
 package dev.bogibek.nutritionxorazm.data.remote
 
-import dev.bogibek.nutritionxorazm.adapters.HistoryAdapter
 import dev.bogibek.nutritionxorazm.models.AdviceResponse
 import dev.bogibek.nutritionxorazm.models.FoodListResponse
 import dev.bogibek.nutritionxorazm.models.History
+import dev.bogibek.nutritionxorazm.models.HistoryModel
 import dev.bogibek.nutritionxorazm.models.Responses
 import dev.bogibek.nutritionxorazm.models.User
 import dev.bogibek.nutritionxorazm.models.UserData
@@ -46,6 +46,9 @@ interface ApiService {
         @Path("id") id: Long,
         @Body data:UserData
     ):Call<User>
+    @GET("history/get/1/")
+    fun getHistoryDate():Call<HistoryModel>
 
-
+    @GET("history/get/1/")
+    fun getHistoryWeekly():Call<HistoryModel>
 }

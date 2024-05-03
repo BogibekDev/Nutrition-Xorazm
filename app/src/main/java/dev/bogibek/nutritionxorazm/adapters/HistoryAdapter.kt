@@ -1,30 +1,47 @@
 package dev.bogibek.nutritionxorazm.adapters
 
-import android.content.Context
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.LinearLayoutManager
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import dev.bogibek.nutritionxorazm.R
-import dev.bogibek.nutritionxorazm.models.FoodsModel
+import dev.bogibek.nutritionxorazm.models.DataItem
+import dev.bogibek.nutritionxorazm.models.HistoryModel
+import dev.bogibek.nutritionxorazm.models.ProductsItem
 
-class HistoryAdapter(private val foods: ArrayList<FoodsModel>,private val ctx:Context) :
-    RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() {
+class HistoryAdapter: RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() {
+    private val data: ArrayList<DataItem> = ArrayList()
+    private val history: ArrayList<HistoryModel> = ArrayList()
+    private val productsItem: ArrayList<ProductsItem> = ArrayList()
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun submitList(list: ArrayList<HistoryModel>) {
+        this.history.clear()
+        this.history.addAll(list)
+        notifyDataSetChanged()
+    }
 
     class HistoryViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val rvHistory: RecyclerView = view.findViewById(R.id.rvHistory)
+        val date: TextView = view.findViewById(R.id.tvDate)
+        val name: TextView = view.findViewById(R.id.tvFood)
+        val calorie: TextView = view.findViewById(R.id.tvFoodsCalorie)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HistoryViewHolder =
         HistoryViewHolder(
             LayoutInflater.from(parent.context)
-                .inflate(R.layout.item_history_foods_content, parent, false)
+                .inflate(R.layout.item_history, parent, false)
         )
 
-    override fun getItemCount(): Int = 1
+    override fun getItemCount(): Int = history.size
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: HistoryViewHolder, position: Int) {
-        holder.rvHistory.layoutManager = LinearLayoutManager(ctx,LinearLayoutManager.VERTICAL,false)
-        holder.rvHistory.adapter = FoodsContentAdapter(ctx,foods)
+        holder.apply {
+            date.text = history[position].data?.get(position)?.date
+            name.text = history[position].data?.get(position)?.products?.get(position)?.name
+            calorie.text = "${history[position].data?.get(position)?.products?.get(position)?.total} kkal"
+        }
     }
 }
