@@ -6,11 +6,13 @@ import dev.bogibek.nutritionxorazm.models.FoodListResponse
 import dev.bogibek.nutritionxorazm.models.History
 import dev.bogibek.nutritionxorazm.models.Responses
 import dev.bogibek.nutritionxorazm.models.User
+import dev.bogibek.nutritionxorazm.models.UserData
 import dev.bogibek.nutritionxorazm.models.UserRequest
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.PUT
 import retrofit2.http.Path
 
 interface ApiService {
@@ -38,6 +40,12 @@ interface ApiService {
         @Path("id")id: Long,
         @Body addProduct: History
     ):Call<Responses<Any>>
+
+    @PUT("api/person/getupdate/{id}/")
+    fun updatePersonField(
+        @Path("id") id: Long,
+        @Body data:UserData
+    ):Call<User>
 
 
 }

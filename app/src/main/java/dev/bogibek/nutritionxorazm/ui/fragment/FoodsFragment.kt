@@ -117,7 +117,7 @@ class FoodsFragment : Fragment() {
             val valume = etVolume.text.toString().trim()
             if (valume.isNotBlank()) {
                 loading.show()
-                ApiClient.apiService.addHistory(userId, History(product.id.toInt(), valume.toInt()))
+                ApiClient.apiService.addHistory(userId, History(product.id.toInt(), valume.toDouble()))
                     .enqueue(object :Callback<Responses<Any>>{
                         override fun onResponse(
                             call: Call<Responses<Any>>,
@@ -145,6 +145,8 @@ class FoodsFragment : Fragment() {
                             Log.d("@@@@@", "onFailure: ${t.message}")
                         }
                     })
+            } else {
+                Toast.makeText(requireContext(), "Maydonni to'ldiring", Toast.LENGTH_SHORT).show()
             }
 
         }

@@ -10,5 +10,5 @@ data class AdviceResponse(
 
 data class Recommend(
     val name: String,
-    val ccal: Long,
+    val ccal: Int,
 )

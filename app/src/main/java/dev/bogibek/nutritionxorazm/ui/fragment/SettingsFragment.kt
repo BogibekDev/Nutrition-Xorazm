@@ -6,13 +6,22 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.LinearLayout.LayoutParams
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import dev.bogibek.nutritionxorazm.R
+import dev.bogibek.nutritionxorazm.data.local.SharedPrefs
+import dev.bogibek.nutritionxorazm.data.remote.ApiClient
+import dev.bogibek.nutritionxorazm.models.User
+import dev.bogibek.nutritionxorazm.models.UserData
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class SettingsFragment : Fragment(R.layout.fragment_settings) {
     private lateinit var dialog: Dialog
+    private var userId: Long = 1
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initViews(view)
@@ -20,6 +29,7 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
 
     private fun initViews(view: View) {
         dialog = Dialog(requireContext())
+        userId = SharedPrefs(requireContext()).getUserId()
         val btnAbout = view.findViewById<Button>(R.id.ibtnAbout)
         val btnLan = view.findViewById<Button>(R.id.ibtnLanguage)
         val btnRating = view.findViewById<Button>(R.id.ibtnComment)
@@ -52,9 +62,30 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
             }
             bSave.setOnClickListener {
                 val volume = etVolume.text.toString()
-                if (volume.isNotBlank()){
+                if (volume.isNotBlank()) {
+                    ApiClient.apiService.updatePersonField(userId, UserData(volume.toDouble()))
+                        .enqueue(object : Callback<User> {
+                            override fun onResponse(call: Call<User>, response: Response<User>) {
+                                if (response.isSuccessful) {
+                                    Toast.makeText(
+                                        requireContext(),
+                                        "Muvafaqqiyatli saqlandi",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                } else {
+                                    Toast.makeText(
+                                        requireContext(),
+                                        "Nimadur xatolik bo'ldi",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                }
+                                dialog.dismiss()
+                            }
 
-                    //call api
+                            override fun onFailure(call: Call<User>, t: Throwable) {
+                                dialog.dismiss()
+                            }
+                        })
                     dialog.dismiss()
                 }
             }
@@ -70,9 +101,33 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
                 dialog.dismiss()
             }
             bSave.setOnClickListener {
-                val volume = etVolume.text.toString().toDouble()
-                if (volume>=0){
-                    //call api
+                val volume = etVolume.text.toString()
+                if (volume.isNotBlank()) {
+                    ApiClient.apiService.updatePersonField(
+                        userId,
+                        UserData(height = volume.toDouble())
+                    ).enqueue(object : Callback<User> {
+                        override fun onResponse(call: Call<User>, response: Response<User>) {
+                            if (response.isSuccessful) {
+                                Toast.makeText(
+                                    requireContext(),
+                                    "Muvafaqqiyatli saqlandi",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            } else {
+                                Toast.makeText(
+                                    requireContext(),
+                                    "Nimadur xatolik bo'ldi",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+                            dialog.dismiss()
+                        }
+
+                        override fun onFailure(call: Call<User>, t: Throwable) {
+                            dialog.dismiss()
+                        }
+                    })
                     dialog.dismiss()
                 }
             }

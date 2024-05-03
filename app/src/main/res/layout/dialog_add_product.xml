@@ -68,8 +68,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:textColor="@color/white"
                 android:maxLength="4"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 android:layout_margin="5dp"
                 android:background="@drawable/order_et_bg"
                 android:layout_weight="2"/>
