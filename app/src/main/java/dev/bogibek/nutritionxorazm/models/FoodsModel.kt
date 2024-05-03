@@ -4,5 +4,5 @@ data class FoodsModel(
     val date:String? = null,
     val name:String,
     val calorie:String,
-    val foods:ArrayList<FoodsModel>
+    val foods:ArrayList<FoodsModel>?
 )
