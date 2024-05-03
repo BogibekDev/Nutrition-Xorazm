@@ -33,10 +33,24 @@
         android:id="@+id/settingsFragment"
         android:name="dev.bogibek.nutritionxorazm.ui.fragment.SettingsFragment"
         android:label="fragment_settings"
-        tools:layout="@layout/fragment_settings" />
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_weeklyFragment"
+            app:destination="@id/weeklyFragment" />
+    </fragment>
     <fragment
         android:id="@+id/breakfastFragment"
         android:name="dev.bogibek.nutritionxorazm.ui.fragment.FoodsFragment"
         android:label="fragment_breakfast"
-        tools:layout="@layout/fragment_foods" />
+        tools:layout="@layout/fragment_foods" >
+        <argument
+            android:name="type"
+            app:argType="string"
+            android:defaultValue='""' />
+    </fragment>
+    <fragment
+        android:id="@+id/weeklyFragment"
+        android:name="dev.bogibek.nutritionxorazm.ui.fragment.WeeklyFragment"
+        android:label="fragment_weekly"
+        tools:layout="@layout/fragment_weekly" />
 </navigation>

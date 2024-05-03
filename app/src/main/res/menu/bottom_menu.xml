@@ -19,7 +19,7 @@
         android:title="Premium" />
     <item
         android:id="@+id/settingsFragment"
-        android:icon="@drawable/ic_settings"
-        android:title="Sozlamalar" />
+        android:icon="@drawable/ic_person"
+        android:title="Profile" />
 
 </menu>

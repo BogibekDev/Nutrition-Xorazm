@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:text="Bog'lanish"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:orientation="vertical"
+       android:layout_marginTop="16dp"
+       android:layout_height="wrap_content">
+       <TextView
+           android:text="Manzil:"
+           android:textStyle="bold"
+
+           android:textSize="20sp"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"/>
+       <TextView
+           android:text="Xorazm 100084, Amir Temur shox ko‘chasi 108 uy."
+           android:textSize="20sp"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"/>
+
+   </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="Ishonch telefoni:"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:text="+998(88)-344-04-24"
+            android:layout_marginStart="40dp"
+            android:textSize="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:text="+998(93)-758-15-08"
+            android:layout_marginStart="40dp"
+            android:textSize="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:text="+998(97)-517-54-57"
+            android:layout_marginStart="40dp"
+            android:textSize="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+</LinearLayout>

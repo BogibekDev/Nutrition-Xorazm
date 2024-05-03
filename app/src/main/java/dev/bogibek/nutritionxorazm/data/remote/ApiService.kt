@@ -1,7 +1,9 @@
 package dev.bogibek.nutritionxorazm.data.remote
 
+import dev.bogibek.nutritionxorazm.adapters.HistoryAdapter
 import dev.bogibek.nutritionxorazm.models.AdviceResponse
 import dev.bogibek.nutritionxorazm.models.FoodListResponse
+import dev.bogibek.nutritionxorazm.models.History
 import dev.bogibek.nutritionxorazm.models.Responses
 import dev.bogibek.nutritionxorazm.models.User
 import dev.bogibek.nutritionxorazm.models.UserRequest
@@ -30,5 +32,12 @@ interface ApiService {
     fun getAdvice(
         @Path("id") id: Long
     ): Call<AdviceResponse>
+
+    @POST("history/post/{id}/")
+    fun addHistory(
+        @Path("id")id: Long,
+        @Body addProduct: History
+    ):Call<Responses<Any>>
+
 
 }

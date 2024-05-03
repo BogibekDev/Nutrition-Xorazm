@@ -1,5 +1,7 @@
 package dev.bogibek.nutritionxorazm.models
 
+import java.io.Serializable
+
 data class FoodListResponse(
     val foods: ArrayList<Product>,
     val salads: ArrayList<Product>,
@@ -16,4 +18,4 @@ data class Product(
     val dose: String,
     val cps: Double,
     val description: String,
-)
+):Serializable

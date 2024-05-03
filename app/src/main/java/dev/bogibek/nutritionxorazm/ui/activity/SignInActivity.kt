@@ -36,38 +36,42 @@ class SignInActivity : AppCompatActivity() {
             btnSignIn.setOnClickListener {
                 val username = etName.text.toString().trim()
                 val password = etPassword.text.toString().trim()
-                val user = UserRequest(username = username, password = password)
-                Log.d("@@@@@", "initViews: $user")
-                loading.show()
-                ApiClient.apiService.personcheck(user).enqueue(object : Callback<Responses<User>> {
-                    override fun onResponse(
-                        call: Call<Responses<User>>,
-                        response: Response<Responses<User>>
-                    ) {
-                        if (response.isSuccessful && response.body() != null) {
-                            if (response.body()!!.success) {
-                                SharedPrefs(this@SignInActivity).saveUserId(response.body()!!.data.id?:0)
-                                startActivity(Intent(this@SignInActivity,MainActivity::class.java))
-                            } else {
-                                Toast.makeText(this@SignInActivity, "Username yoki parol xato", Toast.LENGTH_SHORT).show()
+                if(username.isNotBlank() && password.isNotBlank()){
+                    val user = UserRequest(username = username, password = password)
+                    Log.d("@@@@@", "initViews: $user")
+                    loading.show()
+                    ApiClient.apiService.personcheck(user).enqueue(object : Callback<Responses<User>> {
+                        override fun onResponse(
+                            call: Call<Responses<User>>,
+                            response: Response<Responses<User>>
+                        ) {
+                            if (response.isSuccessful && response.body() != null) {
+                                if (response.body()!!.success) {
+                                    SharedPrefs(this@SignInActivity).saveUserId(response.body()!!.data.id?:0)
+                                    SharedPrefs(this@SignInActivity).saveBoolean("IS_SIGNED",true)
+
+                                    startActivity(Intent(this@SignInActivity,MainActivity::class.java))
+                                } else {
+                                    Toast.makeText(this@SignInActivity, "Username yoki parol xato", Toast.LENGTH_SHORT).show()
+                                }
                             }
+                            loading.hide()
+                            Log.d("@@@@@", "onResponse: code: ${response.code()}")
+                            Log.d("@@@@@", "onResponse: body:  ${response.body()}")
+                            Log.d("@@@@@", "onResponse: errorbody:  ${response.errorBody()}")
+                            if (response.code() >=500){
+                                Toast.makeText(this@SignInActivity, "Server bilan bogliq muammo mavjud", Toast.LENGTH_SHORT).show()
+                            }
+
                         }
-                        loading.hide()
-                        Log.d("@@@@@", "onResponse: code: ${response.code()}")
-                        Log.d("@@@@@", "onResponse: body:  ${response.body()}")
-                        Log.d("@@@@@", "onResponse: errorbody:  ${response.errorBody()}")
-                       if (response.code() >=500){
-                           Toast.makeText(this@SignInActivity, "Server bilan bogliq muammo mavjud", Toast.LENGTH_SHORT).show()
-                       }
 
-                    }
+                        override fun onFailure(call: Call<Responses<User>>, t: Throwable) {
+                            Toast.makeText(this@SignInActivity, "Internet bilan bog'liq muammo mavjud", Toast.LENGTH_SHORT).show()
+                            loading.hide()
+                        }
+                    })
 
-                    override fun onFailure(call: Call<Responses<User>>, t: Throwable) {
-                        Toast.makeText(this@SignInActivity, "Internet bilan bogliq muammo mavjud", Toast.LENGTH_SHORT).show()
-                        loading.hide()
-                    }
-                })
-
+                }
             }
             tvSignIn.setOnClickListener {
                 startActivity(Intent(this@SignInActivity,SignUpActivity::class.java))

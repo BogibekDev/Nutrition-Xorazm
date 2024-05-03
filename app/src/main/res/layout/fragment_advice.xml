@@ -1,181 +1,277 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#32532F"
     android:orientation="vertical"
     tools:context=".ui.fragment.AdviceFragment">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="8"
         android:gravity="center"
         android:paddingHorizontal="16dp">
+
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            app:cardCornerRadius="20dp"
-            android:background="@color/white">
+            android:background="@color/white"
+            app:cardCornerRadius="20dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:gravity="center_vertical">
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="2"
                     android:gravity="start|center_vertical">
+
                     <ImageButton
                         android:id="@+id/ibtnAdvice"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:scaleType="fitCenter"
                         android:background="@color/white"
-                        android:src="@drawable/ic_advice"/>
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_advice" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="start|center_vertical">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Taklif"
                         android:textColor="@color/black"
                         android:textSize="32sp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
                 </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginBottom="16dp"
         android:layout_weight="1"
         android:orientation="vertical"
-        android:paddingHorizontal="16dp"
-        android:layout_marginBottom="16dp">
-        <androidx.cardview.widget.CardView
+        android:paddingHorizontal="16dp">
+
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:cardBackgroundColor="#D9D9D9"
-            app:cardCornerRadius="20dp">
-            <LinearLayout
+            android:layout_height="match_parent">
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                app:cardBackgroundColor="#D9D9D9"
+                app:cardCornerRadius="20dp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="2.8"
-                    android:padding="16dp"
+                    android:layout_marginBottom="10dp"
                     android:orientation="vertical">
+
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1.5">
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
                         <TextView
                             android:id="@+id/tvHeader"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="TABRIKLAYMIZ!"
-                            android:textColor="@color/black"
-                            android:textStyle="bold"
+                            android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:textSize="32sp"/>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center">
+                            android:text="TABRIKLAYMIZ!"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black"
+                            android:textSize="32sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
                             <LinearLayout
+                                android:id="@+id/llTabrik"
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="vertical"
+                                android:layout_height="wrap_content"
                                 android:background="@drawable/content_bg"
-                                android:padding="10dp">
+                                android:orientation="vertical"
+                                android:padding="10dp"
+                                android:visibility="gone">
+
                                 <LinearLayout
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:orientation="horizontal"
-                                    android:layout_weight="1">
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:textSize="20sp"
+                                        android:text="Siz hafta davomida"
                                         android:textColor="@color/black"
-                                        android:textStyle="bold"
-                                        android:text="Siz hafta davomida"/>
+                                        android:textSize="20sp"
+                                        android:textStyle="bold" />
+
                                     <TextView
                                         android:id="@+id/tvCalorie"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:gravity="center"
-                                        android:textSize="20sp"
                                         android:layout_marginStart="5dp"
+                                        android:gravity="center"
+                                        android:text="19000"
                                         android:textColor="#30A709"
-                                        android:textStyle="bold"
-                                        android:text="19000"/>
+                                        android:textSize="20sp"
+                                        android:textStyle="bold" />
+
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:textSize="20sp"
                                         android:layout_marginStart="5dp"
                                         android:gravity="center"
+                                        android:text="kkal"
                                         android:textColor="@color/black"
-                                        android:textStyle="bold"
-                                        android:text="kkal"/>
+                                        android:textSize="20sp"
+                                        android:textStyle="bold" />
                                 </LinearLayout>
+
                                 <LinearLayout
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
+                                    android:layout_height="wrap_content"
                                     android:layout_weight="1">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:text="kaloriya to’pladingiz!"
+                                        android:textColor="@color/black"
+                                        android:textSize="20sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/llOOPS"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/content_bg"
+                                android:orientation="vertical"
+                                android:padding="10dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Siz hafta davomida"
+                                        android:textColor="@color/black"
+                                        android:textSize="20sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/tvCalorieOOPS"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="5dp"
+                                        android:gravity="center"
+                                        android:text="19000"
+                                        android:textColor="#30A709"
+                                        android:textSize="20sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="5dp"
+                                        android:gravity="center"
+                                        android:text="kkal"
+                                        android:textColor="@color/black"
+                                        android:textSize="20sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1">
+
                                     <TextView
                                         android:id="@+id/tvInfo"
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
-                                        android:textSize="20sp"
                                         android:gravity="center"
+                                        android:text="kaloriya to’plolmadingiz!"
                                         android:textColor="@color/black"
-                                        android:textStyle="bold"
-                                        android:text="kaloriya to’pladingiz!"/>
+                                        android:textSize="20sp"
+                                        android:textStyle="bold" />
                                 </LinearLayout>
                             </LinearLayout>
+                        </LinearLayout>
                     </LinearLayout>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:padding="10dp"
-                    android:layout_margin="10dp"
-                    android:orientation="vertical"
-                    android:background="@drawable/content_bg">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="1">
-                    </LinearLayout>
-                    <LinearLayout
-                        android:id="@+id/llAttention"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="3"
-                        android:orientation="vertical">
+                        android:layout_margin="10dp"
+                        android:background="@drawable/content_bg"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <LinearLayout
+                            android:id="@+id/llAdvice"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Bu taomlarni hafta davomida\nistemol qilmagansiz!"
+                                android:textSize="18sp" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rvAdvice"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                                android:orientation="vertical"
+                                tools:listitem="@layout/item_advice"
+                                android:layout_weight="1" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Bu taomlarni istemol qilish orqali o’zingizga kerakli bo’lgan vitamin va minerallarga ega bo’lasiz."
+                                android:textSize="18sp" />
+                        </LinearLayout>
+
                     </LinearLayout>
                 </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="3.2">
-                </LinearLayout>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+            </androidx.cardview.widget.CardView>
+            <include layout="@layout/loading"/>
+        </FrameLayout>
     </LinearLayout>
 
 </LinearLayout>

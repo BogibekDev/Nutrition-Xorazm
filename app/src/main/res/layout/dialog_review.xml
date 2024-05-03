@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:padding="20dp"
+    android:layout_height="wrap_content">
+   <androidx.appcompat.widget.AppCompatRatingBar
+       android:id="@+id/raring"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:numStars="5"
+       android:stepSize="1"
+       android:progressTint="#FFC700"
+       android:rating="4"/>
+
+</LinearLayout>

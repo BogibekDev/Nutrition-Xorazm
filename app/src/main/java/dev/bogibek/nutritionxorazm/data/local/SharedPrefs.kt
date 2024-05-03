@@ -37,8 +37,8 @@ class SharedPrefs(context: Context) {
         editor.apply()
     }
 
-    fun getUserId(): Int {
-        return pref.getInt("UserId", 0)
+    fun getUserId(): Long {
+        return pref.getLong("UserId", 0)
     }
 
     fun getInt(key: String): Int {

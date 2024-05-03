@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import dev.bogibek.nutritionxorazm.R
 import dev.bogibek.nutritionxorazm.databinding.FragmentHomeBinding
@@ -28,7 +29,16 @@ class HomeFragment : Fragment() {
     private fun initViews(view: View) {
         binding.apply {
             ivBreakfast.setOnClickListener {
-                findNavController().navigate(R.id.action_homeFragment_to_breakfastFragment)
+                val bundle = bundleOf("type" to "Ertalabki nonushta")
+                findNavController().navigate(R.id.action_homeFragment_to_breakfastFragment,bundle)
+            }
+            ivLunch.setOnClickListener {
+                val bundle = bundleOf("type" to "Tushlik")
+                findNavController().navigate(R.id.action_homeFragment_to_breakfastFragment,bundle)
+            }
+            ivDinner.setOnClickListener {
+                val bundle = bundleOf("type" to "Kechki ovqat")
+                findNavController().navigate(R.id.action_homeFragment_to_breakfastFragment,bundle)
             }
         }
     }
