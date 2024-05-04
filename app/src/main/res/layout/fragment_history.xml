@@ -79,7 +79,7 @@
         android:layout_height="wrap_content"
         android:background="#FF7B01"
         android:layout_marginBottom="36dp"
-        android:layout_marginHorizontal="26dp"
+        android:layout_marginHorizontal="32dp"
         android:layout_gravity="bottom|center">
         <LinearLayout
             android:layout_width="match_parent"
@@ -99,16 +99,10 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"/>
             </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
+            <View
+                android:layout_width="2dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1.9"
-                android:gravity="center">
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"
-                    android:background="@color/black"/>
-            </LinearLayout>
+                android:background="@color/black"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -117,11 +111,12 @@
                     android:id="@+id/tvWeeklyKKalAmount"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="123"
+                    android:text="Loading..."
                     android:gravity="center"
                     android:textSize="24sp"
                     android:textColor="@color/black"/>
             </LinearLayout>
         </LinearLayout>
     </FrameLayout>
+    <include layout="@layout/loading"/>
 </FrameLayout>

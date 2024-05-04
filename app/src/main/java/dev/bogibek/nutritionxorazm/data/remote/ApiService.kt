@@ -37,18 +37,19 @@ interface ApiService {
 
     @POST("history/post/{id}/")
     fun addHistory(
-        @Path("id")id: Long,
+        @Path("id") id: Long,
         @Body addProduct: History
-    ):Call<Responses<Any>>
+    ): Call<Responses<Any>>
 
     @PUT("api/person/getupdate/{id}/")
     fun updatePersonField(
         @Path("id") id: Long,
-        @Body data:UserData
-    ):Call<User>
-    @GET("history/get/1/")
-    fun getHistoryDate():Call<HistoryModel>
+        @Body data: UserData
+    ): Call<User>
+
+    @GET("history/get/{id}/")
+    fun getHistoryDate(@Path("id") id: Long): Call<HistoryModel>
 
     @GET("history/get/1/")
-    fun getHistoryWeekly():Call<HistoryModel>
+    fun getHistoryWeekly(): Call<HistoryModel>
 }

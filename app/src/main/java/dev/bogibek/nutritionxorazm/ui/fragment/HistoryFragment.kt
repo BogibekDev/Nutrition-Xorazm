@@ -2,90 +2,68 @@ package dev.bogibek.nutritionxorazm.ui.fragment
 
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.airbnb.lottie.LottieAnimationView
+import dev.bogibek.nutritionxorazm.R
 import dev.bogibek.nutritionxorazm.adapters.HistoryAdapter
+import dev.bogibek.nutritionxorazm.data.local.SharedPrefs
 import dev.bogibek.nutritionxorazm.data.remote.ApiClient
-import dev.bogibek.nutritionxorazm.databinding.FragmentHistoryBinding
-import dev.bogibek.nutritionxorazm.models.DataItem
+import dev.bogibek.nutritionxorazm.models.MyHistory
 import dev.bogibek.nutritionxorazm.models.HistoryModel
 import dev.bogibek.nutritionxorazm.models.ProductsItem
+import dev.bogibek.nutritionxorazm.utils.hide
+import dev.bogibek.nutritionxorazm.utils.show
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class HistoryFragment : Fragment() {
+class HistoryFragment : Fragment(R.layout.fragment_history) {
 
-    private lateinit var binding: FragmentHistoryBinding
+
     private lateinit var historyAdapter: HistoryAdapter
-    private lateinit var histories: ArrayList<HistoryModel>
-    private lateinit var data: ArrayList<DataItem>
-    private lateinit var weekly:ArrayList<HistoryModel>
-    private lateinit var productsItem: ArrayList<ProductsItem>
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        binding = FragmentHistoryBinding.inflate(layoutInflater, container, false)
-        return binding.root
-    }
+    private lateinit var tvTotal:TextView
+    private var userId :Long = 1
+    private lateinit var loading: LottieAnimationView
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initViews()
+        initViews(view)
     }
 
-    private fun initViews() {
-        histories = ArrayList()
-        data = ArrayList()
-        productsItem = ArrayList()
+    private fun initViews(view: View) {
+        val rvHistory = view.findViewById<RecyclerView>(R.id.rvHistory)
+        tvTotal = view.findViewById(R.id.tvWeeklyKKalAmount)
+        loading = view.findViewById(R.id.loading)
+        loading.hide()
+        userId = SharedPrefs(requireContext()).getUserId()
         historyAdapter = HistoryAdapter()
-        binding.apply {
-            rvHistory.layoutManager =
-                LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-            rvHistory.adapter = historyAdapter
-            loadHistory()
-            historyAdapter.submitList(histories)
-        }
+        rvHistory.adapter = historyAdapter
+        loadHistory()
     }
 
     private fun loadHistory() {
-        ApiClient.apiService.getHistoryDate().enqueue(object : Callback<HistoryModel>{
-
+        loading.show()
+        ApiClient.apiService.getHistoryDate(userId).enqueue(object : Callback<HistoryModel> {
             override fun onResponse(call: Call<HistoryModel>, response: Response<HistoryModel>) {
-                if (response.isSuccessful){
-
+                if (response.isSuccessful) {
+                    historyAdapter.submitList(response.body()!!.data)
+                    tvTotal.text = "${response.body()!!.total} kkall"
                 }
+                loading.hide()
+                Log.d("@@@@@", "onResponse: ${response.body()}")
             }
 
             override fun onFailure(call: Call<HistoryModel>, t: Throwable) {
                 Log.d("onFail", "onFailure:$t ")
+                loading.hide()
             }
 
 
         })
-
-        ApiClient.apiService.getHistoryWeekly().enqueue(object :Callback<HistoryModel>
-        {
-            override fun onResponse(call: Call<HistoryModel>, response: Response<HistoryModel>) {
-                if (response.isSuccessful){
-                    getWeekly(response.body()!!)
-                }
-            }
-
-            override fun onFailure(call: Call<HistoryModel>, t: Throwable) {
-            }
-
-        })
     }
 
-    private fun getWeekly(body: HistoryModel) {
-        binding.apply {
-            tvWeeklyKKalAmount.text = "${body.total} kkal"
-        }
-    }
 }
