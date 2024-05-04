@@ -49,7 +49,4 @@ interface ApiService {
 
     @GET("history/get/{id}/")
     fun getHistoryDate(@Path("id") id: Long): Call<HistoryModel>
-
-    @GET("history/get/1/")
-    fun getHistoryWeekly(): Call<HistoryModel>
 }

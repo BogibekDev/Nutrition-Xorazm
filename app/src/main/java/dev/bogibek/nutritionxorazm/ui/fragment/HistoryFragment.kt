@@ -5,15 +5,14 @@ import android.util.Log
 import android.view.View
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.airbnb.lottie.LottieAnimationView
 import dev.bogibek.nutritionxorazm.R
 import dev.bogibek.nutritionxorazm.adapters.HistoryAdapter
 import dev.bogibek.nutritionxorazm.data.local.SharedPrefs
 import dev.bogibek.nutritionxorazm.data.remote.ApiClient
-import dev.bogibek.nutritionxorazm.models.MyHistory
 import dev.bogibek.nutritionxorazm.models.HistoryModel
-import dev.bogibek.nutritionxorazm.models.ProductsItem
 import dev.bogibek.nutritionxorazm.utils.hide
 import dev.bogibek.nutritionxorazm.utils.show
 import retrofit2.Call
@@ -24,8 +23,8 @@ class HistoryFragment : Fragment(R.layout.fragment_history) {
 
 
     private lateinit var historyAdapter: HistoryAdapter
-    private lateinit var tvTotal:TextView
-    private var userId :Long = 1
+    private lateinit var tvTotal: TextView
+    private var userId: Long = 1
     private lateinit var loading: LottieAnimationView
 
 
@@ -41,6 +40,8 @@ class HistoryFragment : Fragment(R.layout.fragment_history) {
         loading.hide()
         userId = SharedPrefs(requireContext()).getUserId()
         historyAdapter = HistoryAdapter()
+        rvHistory.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         rvHistory.adapter = historyAdapter
         loadHistory()
     }
