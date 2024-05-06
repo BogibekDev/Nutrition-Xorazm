@@ -27,6 +27,7 @@ class AdviceFragment : Fragment(R.layout.fragment_advice) {
     private lateinit var llOOPS: LinearLayout
     private lateinit var llAdvice: LinearLayout
     private lateinit var tvCalorie: TextView
+    private lateinit var tvInfo: TextView
     private lateinit var tvCalorieOOPS: TextView
     private lateinit var tvHeader: TextView
     private lateinit var rvAdvice: RecyclerView
@@ -46,6 +47,7 @@ class AdviceFragment : Fragment(R.layout.fragment_advice) {
         llOOPS = view.findViewById(R.id.llOOPS)
         llAdvice = view.findViewById(R.id.llAdvice)
         tvHeader = view.findViewById(R.id.tvHeader)
+        tvInfo = view.findViewById(R.id.tvInfo)
         rvAdvice = view.findViewById(R.id.rvAdvice)
 
         loading.hide()
@@ -80,16 +82,15 @@ class AdviceFragment : Fragment(R.layout.fragment_advice) {
 
     private fun setChanges() {
         if (need > 0) {
-            llOOPS.show()
-            llAdvice.show()
-            llTabrik.hide()
             tvHeader.text="OOPS"
             tvCalorieOOPS.text = need.toString()
+            tvInfo.text = "kaloriya to’plolmadingiz!"
         } else {
-            llTabrik.show()
-            llOOPS.hide()
-            llAdvice.hide()
             tvHeader.text="TABRIKLAYMIZ"
+            tvCalorieOOPS.text = total.toString()
+            tvInfo.text = "kaloriya to’pladingiz!"
         }
+        llOOPS.show()
+        llAdvice.show()
     }
 }

@@ -37,7 +37,8 @@
                 android:id="@+id/tvFoodCalorie"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="44kkal"
+                android:text="44 kkal"
+                android:paddingHorizontal="8dp"
                 android:gravity="center"
                 android:textSize="24sp"
                 android:textColor="@color/black"/>

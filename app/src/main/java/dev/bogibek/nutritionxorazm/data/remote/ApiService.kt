@@ -51,9 +51,8 @@ interface ApiService {
     @GET("history/get/{id}/")
     fun getHistoryDate(@Path("id") id: Long): Call<HistoryModel>
 
-    @DELETE("history/delete/{userId}/{id}/")
+    @DELETE("api/history/delete/{id}/")
     fun deleteProduct(
-        @Path("userId") userId: Long,
         @Path("id")id: Long
-    ): Call<Responses<Any>>
+    ): Call<Any>
 }

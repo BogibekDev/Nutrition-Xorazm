@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -39,11 +40,34 @@ class HistoryFragment : Fragment(R.layout.fragment_history) {
         loading = view.findViewById(R.id.loading)
         loading.hide()
         userId = SharedPrefs(requireContext()).getUserId()
-        historyAdapter = HistoryAdapter(requireContext())
+        historyAdapter = HistoryAdapter()
         rvHistory.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         rvHistory.adapter = historyAdapter
         loadHistory()
+        historyAdapter.deleteHistoryItem = {id->
+            deleteProduct(id)
+        }
+    }
+
+    private fun deleteProduct(id: Long) {
+        loading.show()
+        ApiClient.apiService.deleteProduct(id).enqueue(object :Callback<Any>{
+            override fun onResponse(call: Call<Any>, response: Response<Any>) {
+                if (response.isSuccessful){
+                    Toast.makeText(context, "Muvaffaqiyatli o'chirildi", Toast.LENGTH_SHORT).show()
+                    loadHistory()
+                } else {
+                    Toast.makeText(context, "Nimadur xatolik yuz berdi", Toast.LENGTH_SHORT).show()
+                    loading.hide()
+                }
+            }
+
+            override fun onFailure(call: Call<Any>, t: Throwable) {
+                Toast.makeText(context, "Serverda qandaydir xatolik bor!", Toast.LENGTH_SHORT).show()
+                loading.hide()
+            }
+        })
     }
 
     private fun loadHistory() {

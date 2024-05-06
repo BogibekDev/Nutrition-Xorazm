@@ -12,9 +12,10 @@ import dev.bogibek.nutritionxorazm.R
 import dev.bogibek.nutritionxorazm.models.HistoryModel
 import dev.bogibek.nutritionxorazm.models.MyHistory
 
-class HistoryAdapter(val context: Context): RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() {
+class HistoryAdapter: RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() {
     private val histories: ArrayList<MyHistory> = ArrayList()
 
+    var deleteHistoryItem : ((Long)->Unit)?=null
 
     @SuppressLint("NotifyDataSetChanged")
     fun submitList(list: ArrayList<MyHistory>) {
@@ -40,11 +41,11 @@ class HistoryAdapter(val context: Context): RecyclerView.Adapter<HistoryAdapter.
 
     override fun onBindViewHolder(holder: HistoryViewHolder, position: Int) {
         val history = histories[position]
-        Log.d("@@@@@", "onBindViewHolder: $history")
+        val adapter  = HistoryItemAdapter(history.products)
         holder.apply {
             date.text = history.date
-            rvItem.adapter = HistoryItemAdapter(context,history.products)
-
+            rvItem.adapter = adapter
+            adapter.deleteClick = deleteHistoryItem
         }
     }
 }

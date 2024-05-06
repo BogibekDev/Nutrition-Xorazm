@@ -1,13 +1,18 @@
 package dev.bogibek.nutritionxorazm.ui.activity
 
 import android.os.Bundle
+import android.util.Log
+import android.view.MenuItem
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationBarView
 import com.google.android.material.navigation.NavigationView
 import dev.bogibek.nutritionxorazm.R
 
@@ -24,6 +29,5 @@ class MainActivity : AppCompatActivity() {
         val navController = navHostFragment.navController
         val navView = findViewById<BottomNavigationView>(R.id.bottomNavigation)
         navView.setupWithNavController(navController)
-
     }
 }

@@ -13,6 +13,7 @@ data class MyHistory(
 )
 
 data class ProductsItem(
+    val id:Long,
     val total: Double,
     val name: String
 )
