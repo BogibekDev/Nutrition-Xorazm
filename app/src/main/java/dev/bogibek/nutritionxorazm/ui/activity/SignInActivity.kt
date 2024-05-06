@@ -47,8 +47,12 @@ class SignInActivity : AppCompatActivity() {
                         ) {
                             if (response.isSuccessful && response.body() != null) {
                                 if (response.body()!!.success) {
-                                    SharedPrefs(this@SignInActivity).saveUserId(response.body()!!.data.id?:0)
+                                    SharedPrefs(this@SignInActivity).saveUserId(response.body()?.data?.id?:0)
                                     SharedPrefs(this@SignInActivity).saveBoolean("IS_SIGNED",true)
+                                    SharedPrefs(this@SignInActivity).saveString("plan",response.body()?.data?.plan)
+                                    SharedPrefs(this@SignInActivity).saveString("username",response.body()?.data?.username)
+                                    SharedPrefs(this@SignInActivity).saveString("weight",response.body()?.data?.weight.toString())
+                                    SharedPrefs(this@SignInActivity).saveString("height",response.body()?.data?.height.toString())
 
                                     startActivity(Intent(this@SignInActivity,MainActivity::class.java))
                                 } else {

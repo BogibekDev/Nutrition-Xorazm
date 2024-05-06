@@ -10,6 +10,7 @@ import dev.bogibek.nutritionxorazm.models.UserData
 import dev.bogibek.nutritionxorazm.models.UserRequest
 import retrofit2.Call
 import retrofit2.http.Body
+import retrofit2.http.DELETE
 import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.PUT
@@ -49,4 +50,10 @@ interface ApiService {
 
     @GET("history/get/{id}/")
     fun getHistoryDate(@Path("id") id: Long): Call<HistoryModel>
+
+    @DELETE("history/delete/{userId}/{id}/")
+    fun deleteProduct(
+        @Path("userId") userId: Long,
+        @Path("id")id: Long
+    ): Call<Responses<Any>>
 }

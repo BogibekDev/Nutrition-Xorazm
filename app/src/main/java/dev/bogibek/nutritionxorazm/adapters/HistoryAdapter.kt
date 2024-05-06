@@ -1,6 +1,7 @@
 package dev.bogibek.nutritionxorazm.adapters
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +12,7 @@ import dev.bogibek.nutritionxorazm.R
 import dev.bogibek.nutritionxorazm.models.HistoryModel
 import dev.bogibek.nutritionxorazm.models.MyHistory
 
-class HistoryAdapter: RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() {
+class HistoryAdapter(val context: Context): RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() {
     private val histories: ArrayList<MyHistory> = ArrayList()
 
 
@@ -36,13 +37,14 @@ class HistoryAdapter: RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() {
         )
 
     override fun getItemCount(): Int = histories.size
-    override fun onBindViewHolder(holder: HistoryViewHolder, position: Int) {
 
+    override fun onBindViewHolder(holder: HistoryViewHolder, position: Int) {
         val history = histories[position]
         Log.d("@@@@@", "onBindViewHolder: $history")
         holder.apply {
             date.text = history.date
-            rvItem.adapter = HistoryItemAdapter(history.products)
+            rvItem.adapter = HistoryItemAdapter(context,history.products)
+
         }
     }
 }

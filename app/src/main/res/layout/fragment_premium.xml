@@ -34,7 +34,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="0.7"
             android:paddingHorizontal="16dp"
             android:gravity="center_vertical"
             android:orientation="horizontal">
@@ -96,7 +96,7 @@
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:text="OYLIK TO’LOV - 4,5 US$oylik"/>
+            android:text="OYLIK TO’LOV - 60 000 so'm"/>
         <Button
             android:id="@+id/btnYear"
             android:layout_width="match_parent"
@@ -107,6 +107,6 @@
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:text="YILLIK TO’LOV - 20,5 US$yillik"/>
+            android:text="YILLIK TO’LOV - 500 0000 so'm"/>
     </LinearLayout>
 </LinearLayout>

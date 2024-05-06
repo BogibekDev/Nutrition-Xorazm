@@ -39,7 +39,7 @@ class HistoryFragment : Fragment(R.layout.fragment_history) {
         loading = view.findViewById(R.id.loading)
         loading.hide()
         userId = SharedPrefs(requireContext()).getUserId()
-        historyAdapter = HistoryAdapter()
+        historyAdapter = HistoryAdapter(requireContext())
         rvHistory.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         rvHistory.adapter = historyAdapter

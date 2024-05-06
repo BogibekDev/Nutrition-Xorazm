@@ -38,7 +38,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:inputType="number"
+                        android:inputType="numberDecimal"
                         android:maxLength="3"
                         android:textColor="@color/white"
                         android:layout_margin="5dp"

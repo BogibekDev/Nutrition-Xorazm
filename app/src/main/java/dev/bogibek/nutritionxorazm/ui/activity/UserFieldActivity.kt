@@ -74,6 +74,9 @@ class UserFieldActivity : AppCompatActivity() {
                                     SharedPrefs(this@UserFieldActivity).saveUserId(response.body()?.id?:0)
                                     SharedPrefs(this@UserFieldActivity).saveBoolean("IS_SIGNED",true)
                                     SharedPrefs(this@UserFieldActivity).saveString("plan",response.body()?.plan)
+                                    SharedPrefs(this@UserFieldActivity).saveString("username",response.body()!!.username)
+                                    SharedPrefs(this@UserFieldActivity).saveString("weight",response.body()!!.weight.toString())
+                                    SharedPrefs(this@UserFieldActivity).saveString("height",response.body()!!.height.toString())
                                     startActivity(Intent(this@UserFieldActivity,MainActivity::class.java))
                                     finish()
                                 }

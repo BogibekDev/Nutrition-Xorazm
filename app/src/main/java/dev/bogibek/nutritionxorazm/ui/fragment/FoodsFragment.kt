@@ -12,6 +12,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.airbnb.lottie.LottieAnimationView
 import dev.bogibek.nutritionxorazm.R
 import dev.bogibek.nutritionxorazm.adapters.ProductAdapter
@@ -61,6 +62,9 @@ class FoodsFragment : Fragment() {
         getProductsList()
         val type = arguments?.getString("type") ?: ""
         binding.apply {
+            binding.ibBack.setOnClickListener {
+                findNavController().navigateUp()
+            }
             tvHeader.text = type
             rvFoods.adapter = foodAdapter
             rvShirinlik.adapter = desertAdapter
