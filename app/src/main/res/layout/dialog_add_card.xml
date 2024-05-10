@@ -68,7 +68,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:maxLength="19"
-                    android:text="0000 0000 0000 0000"
+                    android:text="1234 5678 9012 3456"
                     android:textColor="@color/white"
                     android:textSize="30sp" />
 
@@ -86,18 +86,36 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Azamat"
+                    android:maxLength="15"
+                    android:text="Holder name"
                     android:textColor="@color/white"
                     android:textSize="30sp" />
 
                 <TextView
                     android:id="@+id/tvDate"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2"
                     android:gravity="center"
                     android:maxLength="5"
-                    android:text="12/24"
+                    android:text="dd"
+                    android:textColor="@color/white"
+                    android:textSize="30sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxLength="5"
+                    android:text="/"
+                    android:textColor="@color/white"
+                    android:textSize="30sp" />
+                <TextView
+                    android:id="@+id/tvYear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxLength="5"
+                    android:text="yy"
+                    android:layout_marginEnd="16dp"
                     android:textColor="@color/white"
                     android:textSize="30sp" />
 
@@ -118,7 +136,7 @@
             android:id="@+id/etCardName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Card Name"
+            android:hint="Holder Name"
             android:textSize="20sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -132,8 +150,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Card Number"
-            android:maxLength="16"
-            android:inputType="number"
+            android:maxLength="19"
+
             android:textSize="20sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -176,6 +194,7 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/bPay"
         android:layout_width="match_parent"
         android:layout_marginTop="20dp"
         android:background="@drawable/content_background"
